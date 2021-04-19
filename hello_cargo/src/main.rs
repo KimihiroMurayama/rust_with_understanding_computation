@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 fn main() {
     println!("(true && false) || true");
     let bool = (true && false) || true;
@@ -19,6 +21,19 @@ fn main() {
     println!("シンボルは存在しない");
 
     println!("配列型");
-    let array = ['zero', 'one', 'two']
-}
+    let  array: [String; 3] = ["zero".to_string(), "one".to_string(), "two".to_string()];
+    println!("{:?}", array);
+
+    println!("range");
+    let range = std::ops::Range { start: 3, end: 9 };
+    for n in range {
+        println!("{:?}", n);
+    };
+
+    let mut contacts = HashMap::new();
+    contacts.insert("Daniel", "798-1364");
+    contacts.insert("Ashley", "645-7689");
+    contacts.insert("Katie", "435-8291");
+    contacts.insert("Robert", "956-1745");
+    println!("{:?}", contacts);
 }
